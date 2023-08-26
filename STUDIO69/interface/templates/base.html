@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>STUDIO69 - {% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% include 'includes/header.html' %}
+    <main class="main">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+</body>
+</html>

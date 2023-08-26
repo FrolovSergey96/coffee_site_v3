@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+
+{% block content %}
+<div class="main__content">
+    <h1>SLIDER</h1>
+</div>
+
+<div class="container">
+    <ul class="main__choice">
+        <li class="choice__item">Кофе</li>
+        <li class="choice__item">Аксессуары</li>
+    </ul>
+
+    <div class="product__grid">
+        {% for product in products %}
+        <div class="product__card">
+            <img src="media/{{ product.icon }}" alt="{{ product.title }}" class="product__img">
+            <div class="product__details">
+                <h3 class="product__title">{{ product.title }}</h3>
+                <div class="product__price">{{ product.price }}</div>
+                <div class="product__quantity">
+                    <button class="quantity__btn minus__btn">-</button>
+                    <input type="text" class="quantity__input" value="1">
+                    <button class="quantity__btn plus__btn">+</button>
+                </div>
+                <button class="but__btn">Купить</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
